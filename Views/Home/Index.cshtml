@@ -1,8 +1,46 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+ 
+<html>
+<body>
+  <div class="container">
+    <header>
+      <h1>Welcome to the Student Call Center System</h1>
+      <p>Please select your role to continue</p>
+    </header>
+
+    <div class="card-container">
+      <!-- Student Card -->
+      <div class="card">
+        <img src="~/js/Student image.jpg" alt="Student Image">
+        <h2>Student</h2>
+        <p>Access call services and communicate with technicians for support.</p>
+    <form asp-controller="Home" asp-action="Student" method="get">
+    <button type="submit" class="btn btn-primary">
+        <i class="fas fa-user-graduate"></i> Continue as Student
+    </button>
+</form>
+      </div>
+
+      <!-- Technician Card -->
+      <div class="card">
+        <img src="~/js/technician imag.jpg" alt="Technician Image">
+        <h2>Technician</h2>
+        <p>Manage student calls, resolve issues, and update call states.</p>
+        <form asp-controller="Home" asp-action="Technician" method="get">
+    <button type="submit" class="btn btn-primary">
+        <i class="fas fa-user-graduate"></i> Continue as Student
+    </button>
+</form>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Student Call Center System. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>

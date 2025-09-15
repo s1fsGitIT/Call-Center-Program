@@ -1,0 +1,61 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = "Student Call Log";
+}
+
+<div class="container">
+    <header>
+        <div class="logo">
+            <i class="fas fa-user-graduate"></i>
+            <span>Student Call Log</span>
+        </div>
+    </header>
+
+    <div class="content">
+        <h2>My Calls</h2>
+        <p>Here you can view your previous calls, make new calls, or check the status of ongoing calls.</p>
+
+        <div class="actions">
+            <button class="btn" style="background-color: var(--secondary); color: white;">
+                <i class="fas fa-phone"></i> Make a Call
+            </button>
+            <button class="btn" style="background-color: var(--hung-up); color: white;">
+                <i class="fas fa-phone-slash"></i> Drop Call
+            </button>
+        </div>
+
+        <table class="call-log">
+            <thead>
+                <tr>
+                    <th>Call ID</th>
+                    <th>Status</th>
+                    <th>Duration</th>
+                    <th>Technician</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#1001</td>
+                    <td><span class="status on-call">On Call</span></td>
+                    <td>05:23</td>
+                    <td>Mr. Adams</td>
+                </tr>
+                <tr>
+                    <td>#1002</td>
+                    <td><span class="status on-hold">On Hold</span></td>
+                    <td>--</td>
+                    <td>Ms. Brown</td>
+                </tr>
+                <tr>
+                    <td>#1003</td>
+                    <td><span class="status hung-up">Hung Up</span></td>
+                    <td>12:45</td>
+                    <td>Mr. Lee</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

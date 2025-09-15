@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = "Technician Call Management";
+}
+
+<div class="container">
+    <header>
+        <div class="logo">
+            <i class="fas fa-tools"></i>
+            <span>Technician Dashboard</span>
+        </div>
+    </header>
+
+    <div class="content">
+        <h2>Assigned Calls</h2>
+        <p>Manage student calls, update call status, or return calls from the virtual log.</p>
+
+        <div class="actions">
+            <button class="btn" style="background-color: var(--on-call); color: white;">
+                <i class="fas fa-phone"></i> Connect
+            </button>
+            <button class="btn" style="background-color: var(--on-hold); color: white;">
+                <i class="fas fa-pause-circle"></i> Put on Hold
+            </button>
+            <button class="btn" style="background-color: var(--hung-up); color: white;">
+                <i class="fas fa-phone-slash"></i> End Call
+            </button>
+        </div>
+
+        <table class="call-log">
+            <thead>
+                <tr>
+                    <th>Call ID</th>
+                    <th>Student</th>
+                    <th>Status</th>
+                    <th>Duration</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#2001</td>
+                    <td>Alice Johnson</td>
+                    <td><span class="status on-call">On Call</span></td>
+                    <td>02:10</td>
+                </tr>
+                <tr>
+                    <td>#2002</td>
+                    <td>Michael Smith</td>
+                    <td><span class="status on-hold">On Hold</span></td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>#2003</td>
+                    <td>Susan Lee</td>
+                    <td><span class="status hung-up">Hung Up</span></td>
+                    <td>07:32</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
