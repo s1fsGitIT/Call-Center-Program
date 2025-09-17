@@ -2,9 +2,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
  
-<html>
+@* <html>
 <body>
   <div class="container">
     <header>
@@ -12,9 +11,9 @@
       <p>Please select your role to continue</p>
     </header>
 
-    <div class="card-container">
+    <div1 class="card-container">
       <!-- Student Card -->
-      <div class="card">
+      <div class="card1">
         <img src="~/js/Student image.jpg" alt="Student Image">
         <h2>Student</h2>
         <p>Access call services and communicate with technicians for support.</p>
@@ -26,7 +25,7 @@
       </div>
 
       <!-- Technician Card -->
-      <div class="card">
+      <div2 class="card2">
         <img src="~/js/technician imag.jpg" alt="Technician Image">
         <h2>Technician</h2>
         <p>Manage student calls, resolve issues, and update call states.</p>
@@ -35,12 +34,213 @@
         <i class="fas fa-user-graduate"></i> Continue as Student
     </button>
 </form>
-      </div>
-    </div>
+      </div2>
+    </div1>
 
     <footer>
       <p>&copy; 2025 Student Call Center System. All rights reserved.</p>
     </footer>
   </div>
 </body>
+</html> *@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Call Center System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- TOP HEADER -->
+   <!---- <div class="top-header"> -->
+    <!---- <h1>Call Center System</h1>-->
+    <!----</div>-->
+
+    <!-- SECOND HEADER -->
+    <header class="main-header">
+        <h2>Welcome to the Student Call Center System</h2>
+        <i class="fas fa-headset headset-icon"></i>
+        <!-- <p>Please select your role to continue</p> -->
+    </header>
+
+    <!-- CARD SECTION -->
+    <div class="card-container">
+        <!-- Student Card -->
+        <div class="card">
+            <img src="~/js/Student image.jpg" alt="Student Image">
+            <h3>Student</h3>
+            <p>Access call services and communicate with technicians for support.</p>
+            <form asp-controller="Home" asp-action="Student" method="get">
+                <button type="submit" class="btn">
+                    <i class="fas fa-user-graduate"></i> Continue as Student
+                </button>
+            </form>
+        </div>
+
+        <!-- Technician Card -->
+        <div class="card">
+            <img src="~/js/technician imag.jpg" alt="Technician Image">
+            <h3>Technician</h3>
+            <p>Manage student calls, resolve issues, and update call states.</p>
+            <form asp-controller="Home" asp-action="Technician" method="get">
+                <button type="submit" class="btn">
+                    <i class="fas fa-tools"></i> Continue as Technician
+                </button>
+            </form>
+        </div>
+
+        <!-- Manager Card (Placeholder) -->
+        <div class="card">
+            <img src="~/js/manager.webp" alt="Manager Image">
+            <h3>Manager</h3>
+            <p>Oversee system performance, user activity, and technician efficiency.</p>
+            <form asp-controller="Home" asp-action="Manager" method="get">
+                <button type="submit" class="btn">
+                    <i class="fas fa-user-tie"></i> Continue as Manager
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Student Call Center System. All rights reserved.</p>
+    </footer>
+
+</body>
 </html>
+
+
+
+<style>
+
+    /* General reset and layout */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    /* Top header styling (no border-radius) */
+    /*.top-header {
+        background-color: #333;
+        color: black;
+        text-align: center;
+        padding: 20px;
+        font-size: 28px;
+    }*/
+
+    /* Second header styling */
+    .main-header {
+        background-color: #e0e0e0;
+        color: #333;
+        text-align: center;
+        padding: 20px;
+        font-size: 28px;
+        border-radius: 25px;
+        padding: 30px 20px;
+        transition: background-color 0.3s ease;
+        display: flex;
+        align-items: center; /* Vertically center the content */
+        justify-content: center;
+        gap: 10px; /* Space between heading and the icon */
+    }
+
+    .headset-icon {
+        font-size: 60px; /* Adjust size of the icon */
+        color: #007bff; /* Change icon color */
+    }
+
+        .main-header:hover {
+            background-color: lightblue; /* blue on hover */
+            color: white;
+           
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .main-header h2 {
+            margin: 0 0 10px;
+        }
+
+        .main-header p {
+            margin: 0;
+            font-size: 18px;
+        }
+
+    /* Card container for horizontal layout */
+    .card-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap; /* Keeps cards in one row */
+        overflow-x: auto; /* Allows horizontal scroll if needed */
+        padding: 20px;
+        gap: 20px;
+    }
+
+    /* Individual card styling */
+    .card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        padding: 20px;
+        width: 300px;
+        flex-shrink: 0; /* Prevent shrinking in flex */
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+        .card:hover {
+            transform: scale(1.05); /* Swipe/Zoom effect on hover */
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            margin-top: 15px;
+            color: #333;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+    /* Button styling */
+    .btn {
+        background-color: green;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 15px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn:hover {
+            background-color: darkgreen;
+        }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: #999;
+        font-size: 14px;
+    }
+
+</style>

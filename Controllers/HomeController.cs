@@ -27,5 +27,13 @@ namespace CallCenterProgram.Controllers
         {
             return View();
         }
+        public IActionResult Manager()
+        {
+            return View();
+        }
+        public IActionResult Login()
+        {
+            return View();
+        }
     }
 }
